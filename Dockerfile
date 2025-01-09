@@ -1,5 +1,5 @@
 # Use a base Node.js image
-FROM node:16-alpine
+FROM node:14.1.0
 
 # Add some dummy content
 RUN echo "Snyk Container Demo" > /app.txt
