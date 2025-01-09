@@ -31,6 +31,11 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/demo-node-app:latest
 
+      # Install the Snyk CLI
+      - name: Install Snyk CLI
+        run: |
+          npm install -g snyk
+
       # Monitor the image with Snyk
       - name: Snyk Container Monitor
         env:
