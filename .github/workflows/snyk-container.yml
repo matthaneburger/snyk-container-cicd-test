@@ -24,12 +24,12 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-node-app:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-node-app:communify .
 
       # Push the Docker image to DockerHub
       - name: Push Docker image to DockerHub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/demo-node-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/demo-node-app:communify
 
       # Install the Snyk CLI
       - name: Install Snyk CLI
@@ -41,4 +41,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: |
-          snyk container monitor ${{ secrets.DOCKER_USERNAME }}/demo-node-app:latest
+          snyk container monitor ${{ secrets.DOCKER_USERNAME }}/demo-node-app:communify
