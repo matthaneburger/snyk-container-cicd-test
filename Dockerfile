@@ -5,3 +5,4 @@ FROM node:16-alpine
 RUN echo "Snyk Container Demo" > /app.txt
 
 # No application setup required
+#testing
